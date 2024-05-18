@@ -1,3 +1,5 @@
+/******************************************************************Common CSS starts******************************************************************/
+
 * {
   margin: 0px;
   padding: 0px;
@@ -29,11 +31,13 @@ p {
   left: 53%;
   font-weight: bolder;
   transform: translateX(-50%);
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #e6e6ee;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
+/******************************************************************Common CSS ends******************************************************************/
 
 .box_container {
   display: flex;
@@ -79,6 +83,8 @@ p {
   box-shadow: 3px 3px 4px black;
 }
 
+/******************************************************************SUN-MOON CSS starts******************************************************************/
+
 .sun-moon {
   position: absolute;
   top: 5px;
@@ -90,6 +96,7 @@ p {
   background-color: var(--first-color);
   cursor: pointer;
   box-shadow: 0 0 50px var(--fourth-color);
+  z-index: 3;
   transition: 0.2s;
 }
 
@@ -120,10 +127,14 @@ p {
   border-radius: 50%;
 }
 
+/******************************************************************SUN-MOON CSS ends*****************************************************************/
+
+/******************************************************************CLOUD CSS starts******************************************************************/
 .obj1 {
   position: absolute;
   top: 152px;
   left: 139px;
+  z-index: 2;
   animation: move1 38s linear infinite;
 }
 
@@ -131,6 +142,7 @@ p {
   position: absolute;
   top: 220px;
   left: 483px;
+  z-index: 2;
   animation: move2 36s linear infinite;
 }
 
@@ -138,13 +150,15 @@ p {
   position: absolute;
   top: 171px;
   left: 898px;
+  z-index: 2;
   animation: move3 30s linear infinite;
 }
 
 .obj4 {
   position: absolute;
-  top: 90px;
+  top: 140px;
   left: 1300px;
+  z-index: 2;
   animation: move4 20s linear infinite;
 }
 
@@ -190,7 +204,6 @@ p {
 .cloud16 {
   position: absolute;
   top: -72px;
-  z-index: 1000;
   width: 100px;
   height: 100px;
   border-radius: 99px 0;
@@ -204,7 +217,6 @@ p {
 .cloud17 {
   position: absolute;
   top: -72px;
-  z-index: 1000;
   width: 100px;
   height: 100px;
   border-radius: 99px 0;
@@ -218,7 +230,6 @@ p {
 .cloud18 {
   position: absolute;
   top: -46px;
-  z-index: 1000;
   width: 100px;
   height: 100px;
   border-radius: 99px 0;
@@ -232,7 +243,6 @@ p {
 .cloud19 {
   position: absolute;
   top: -53px;
-  z-index: 1000;
   width: 100px;
   height: 100px;
   border-radius: 99px 0;
@@ -245,8 +255,7 @@ p {
 .cloud15,
 .cloud20 {
   position: absolute;
-  top: -43px;
-  z-index: 1000;
+  top: -45px;
   width: 100px;
   height: 100px;
   border-radius: 99px 0;
@@ -258,15 +267,9 @@ p {
   background-color: var(--fourth-color);
 }
 
-.crow1 {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  background-color: #000;
-  border-radius: 49px 0;
-  transform: rotate(225deg);
-  animation: fly1 22s linear infinite;
-}
+/******************************************************************CLOUD CSS ends******************************************************************/
+
+/******************************************************************CROW CSS starts*****************************************************************/
 
 .crow_body {
   width: 50px;
@@ -277,47 +280,46 @@ p {
 .crow_wing1 {
   width: 16px;
   height: 40px;
-  border-radius: 50px 0px;
+  border-radius: 0px 50px 50px 0px;
   position: absolute;
   background-color: #000;
-  top: -12px;
-  left: 8px;
-  transform: rotate(-50deg);
-  animation: flap1 3.8s linear infinite;
+  top: 18px;
+  left: 25px;
+  animation: flap1 2.5s linear infinite;
 }
 
 @keyframes flap1 {
   50% {
-    transform: rotate(1deg);
+    transform: rotate(-50deg);
   }
 }
 
 .crow_wing2 {
   width: 16px;
   height: 40px;
-  border-radius: 50px 0px;
+  border-radius: 0px 50px 50px 0px;
   position: absolute;
   background-color: #000;
-  top: 23px;
-  left: 26px;
-  transform: rotate(-51deg);
-  animation: flap2 3.6s linear infinite;
+  top: -4px;
+  left: 7px;
+  animation: flap2 3s linear infinite;
 }
 
 @keyframes flap2 {
   50% {
-    transform: rotate(0.7deg);
+    transform: rotate(-50deg);
   }
 }
 
-.crow2 {
+.crow1 {
   position: absolute;
-  top: 30%;
-  left: 60%;
+  top: 20%;
+  left: 10%;
   background-color: #000;
   border-radius: 49px 0;
+  z-index: 3;
   transform: rotate(225deg);
-  animation: fly2 17s linear infinite;
+  animation: fly1 22s linear infinite;
 }
 
 @keyframes fly1 {
@@ -333,6 +335,17 @@ p {
   }
 }
 
+.crow2 {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  background-color: #000;
+  border-radius: 49px 0;
+  z-index: 3;
+  transform: rotate(225deg);
+  animation: fly2 17s linear infinite;
+}
+
 @keyframes fly2 {
   0% {
     transform: translateX(-1300px);
@@ -346,15 +359,39 @@ p {
   }
 }
 
-@media screen and (max-width: 500px) {
-  body {
-    overflow: hidden;
-  }
+/******************************************************************CROW CSS ends********************************************************************/
 
+/******************************************************************Media Query starts*****************************************************************/
+
+@media screen and (max-width: 991px) {
   .outer_box,
   .inner_box {
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50px 0px 50px 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+  .outer_box,
+  .inner_box {
+    width: 300px;
+    height: 300px;
+    border-radius: 50px 0px 50px 0px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .outer_box,
+  .inner_box {
+    width: 250px;
+    height: 250px;
     border-radius: 50px 0px 50px 0px;
   }
 
@@ -366,10 +403,6 @@ p {
     font-size: 2.5rem;
   }
 
-  p {
-    font-size: 2rem;
-  }
-
   .obj1,
   .obj2,
   .obj3,
@@ -378,3 +411,5 @@ p {
     height: 100px;
   }
 }
+
+/******************************************************************Media Query ends*****************************************************************/
