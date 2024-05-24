@@ -4,6 +4,8 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 :root {
@@ -383,7 +385,6 @@ p {
   .inner_box {
     width: 300px;
     height: 300px;
-    border-radius: 50px 0px 50px 0px;
   }
 }
 
@@ -392,7 +393,6 @@ p {
   .inner_box {
     width: 250px;
     height: 250px;
-    border-radius: 50px 0px 50px 0px;
   }
 
   .outer_box {
@@ -409,6 +409,14 @@ p {
   .obj4 {
     width: 100px;
     height: 100px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .outer_box,
+  .inner_box {
+    width: 200px;
+    height: 200px;
   }
 }
 
